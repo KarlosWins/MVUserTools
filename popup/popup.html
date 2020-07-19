@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+    <script src="/lib/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/common.js"></script>
+</head>
+
+<body>
+    <div>MV User Tools - Version 0.0.1a</div>
+    <br />
+    <label>Lista de usuarios ignorados (separados por , )</label><br />
+    <input type="text" id="ignoredUsers" class="ignoredUsers" placeholder="NombreUsuario1,Usuario2,Ejemplo3" /><br />
+    <label><input type="checkbox" id="checkboxHidePosts" />Ocultar sus posts</label><br>
+    <label><input type="checkbox" id="checkboxHideThreads" />Ocultar sus hilos en la pestaña 'foros'</label><br>
+    <br />
+    <label>Miscelanea</label><br />
+    <label><input type="checkbox" id="checkboxFixNightWolf" />Arreglar el nick de NightWolf</label><br>
+    <br />
+    <button>Guardar Preferencias</button><br />
+    <script src="popup.js"></script>
+</body>
