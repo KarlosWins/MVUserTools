@@ -3,7 +3,7 @@ var browser = chrome;
 browser.storage.local.get(['ignoredUsers', 'checkboxHidePosts', 'checkboxHideThreads', 'checkboxFixNightWolf'], function (userSettings) {
 
   // Ocultar posts
-  if (userSettings.checkboxHidePosts == true) {
+  if (userSettings.checkboxHidePosts) {
     var x = document.getElementsByClassName("cf post");
     for (var i = 0; i < x.length; i++) {
       if (userSettings.ignoredUsers.includes(x[i].dataset.autor)) {
@@ -21,7 +21,7 @@ browser.storage.local.get(['ignoredUsers', 'checkboxHidePosts', 'checkboxHideThr
   }
 
   // Ocultar hilos
-  if (userSettings.checkboxHideThreads == true) {
+  if (userSettings.checkboxHideThreads) {
     var threads = document.getElementsByClassName("tooltip-left");
     for (var i = 0; i < threads.length; i++) {
       var nombreUsuario = threads[i].href.split("/");
@@ -34,8 +34,9 @@ browser.storage.local.get(['ignoredUsers', 'checkboxHidePosts', 'checkboxHideThr
 
   // Misc
   // Fix nick Nightwolf
-  if (userSettings.checkboxFixNightWolf == true) {
-    var nicks = document.getElementsByClassName("autor user-card on");
+  
+  if (userSettings.checkboxFixNightWolf) {
+    var nicks = document.getElementsByClassName("autor user-card");
     for (var i = 0; i < nicks.length; i++) {
       var nombreUsuario = nicks[i].href.split("/");
       nombreUsuario = nombreUsuario[nombreUsuario.length - 1];
